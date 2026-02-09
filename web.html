@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial</title>
+    <link rel="stylesheet" href="/web.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="welcome-text">Celestial</div>
+
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <form class="login-form" id="loginForm">
+                <h2>Celestial</h2>
+                <div id="error-message"></div>
+                <input type="email" id="email" placeholder="email" required>
+                <input type="password" id="password" placeholder="password" required minlength="8">
+                <button type="submit">login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="block-screen" class="screen">
+        <div class="block-container">
+            <h2>access blocked</h2>
+            <p>retry in <span id="countdown">10</span> seconds</p>
+        </div>
+    </div>
+
+    <div id="content-screen">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="2.5" fill="none" stroke="#ffffff" stroke-width="1.5" />
+                            <path d="M18 8L21 5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M6 8L3 5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M18 16L21 19" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M6 16L3 19" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span class="logo-text">Celestial</span>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Search
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Services
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M13 16H12C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8H13M13 16C15.2091 16 17 14.2091 17 12C17 9.79086 15.2091 8 13 8M13 16V19M13 8V5M5 12H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        About
+                    </a>
+                </div>
+
+                <div class="user-profile">
+                    <img src="/onion.jpg" alt="Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-email" id="user-email">user@celestial.com</span>
+                        <div class="user-status">
+                            <span class="status-dot"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <button id="logout-btn" class="logout-button">logout</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/web.js"></script>
+</body>
+</html>
