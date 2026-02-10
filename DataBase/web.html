@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBase - Celestial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/database/web.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="/onion.mp4" type="video/mp4">
+        </video>
+        <div class="gif-fallback" id="gif-fallback"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="12" r="2.5" fill="none" stroke="#ffffff" stroke-width="1.5" />
+                        <path d="M18 8L21 5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M6 8L3 5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M18 16L21 19" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M6 16L3 19" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <span class="logo-text">Celestial</span>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="/celestial-ai" class="nav-link">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M8 9L12 12L8 15M16 9L12 12L16 15M10 8L14 16M14 8L10 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M12 4L12 6M12 18L12 20M4 12L6 12M18 12L20 12M6 6L7 7M18 6L17 7M6 18L7 17M18 18L17 17" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                    </svg>
+                    Celestial AI
+                </a>
+
+                <a href="/search" class="nav-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Search
+                </a>
+
+                <a href="/database" class="nav-link active">
+                    <svg viewBox="0 0 24 24">
+                        <ellipse cx="12" cy="19" rx="8" ry="2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <rect x="4" y="4" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M4 9H20M4 12H20M4 15H20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    DataBase
+                </a>
+
+                <a href="/services" class="nav-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Services
+                </a>
+
+                <a href="/about" class="nav-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M13 16H12C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8H13M13 16C15.2091 16 17 14.2091 17 12C17 9.79086 15.2091 8 13 8M13 16V19M13 8V5M5 12H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    About
+                </a>
+            </div>
+
+            <div class="user-profile">
+                <img src="/onion.jpg" alt="Avatar" class="user-avatar">
+                <div class="user-info">
+                    <span class="user-email" id="user-email">user@celestial.com</span>
+                    <div class="user-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="database-header">
+        <div class="database-title"> DataBase</div>
+        <div class="database-subtitle">Available Collections</div>
+
+        <div class="database-description">
+            <p>The ultimate archive of knowledge gathered from every corner of the digital universe.</p>
+            <p>A curated collection of 30TB spanning Wikipedia mirrors, darknet databases, security breaches,</p>
+            <p>phishing archives, classified intelligence sources, and restricted data repositories.</p>
+        </div>
+
+        <div class="database-stats">
+            <div class="stat-item">
+                <div class="stat-number">30TB</div>
+                <div class="stat-label">Total Archive</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">650B+</div>
+                <div class="stat-label">Records</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7K+</div>
+                <div class="stat-label">Sources</div>
+            </div>
+        </div>
+
+        <div class="download-container">
+            <a href="/database.txt" download class="download-button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="download-text">DOWNLOAD DATABASE LIST</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="/database/web.js"></script>
+</body>
+</html>

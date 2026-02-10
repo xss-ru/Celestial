@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial | Celestial AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/celestial-ai/web.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="/onion.mp4" type="video/mp4">
+        </video>
+        <div class="gif-fallback" id="gif-fallback"></div>
+        <div class="cosmic-overlay"></div>
+        <div class="nebula-effect"></div>
+    </div>
+
+    <nav class="ai-navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="12" r="2.5" fill="none" stroke="#ffffff" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span class="logo-text">Celestial</span>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/celestial-ai" class="nav-link active">Celestial AI</a>
+            <a href="/search" class="nav-link">Search</a>
+            <a href="/database" class="nav-link">DataBase</a>
+            <a href="/services" class="nav-link">Services</a>
+            <a href="/about" class="nav-link">About</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="user-profile">
+                <img src="/onion.jpg" alt="Avatar" class="user-avatar">
+                <div class="user-info">
+                    <span class="user-email" id="user-email">user@celestial.com</span>
+                    <div class="user-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ai-container">
+        <div class="ai-sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" id="newChatBtn">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    New Chat
+                </button>
+            </div>
+
+            <div class="sidebar-title">Recent Conversations</div>
+
+            <div class="chat-history" id="chatHistory">
+                <!-- History will be loaded here -->
+            </div>
+        </div>
+
+        <div class="ai-main">
+            <div class="chat-messages" id="chatMessages">
+                <div class="empty-chat" id="emptyChatState">
+                    <svg class="empty-chat-icon" viewBox="0 0 24 24">
+                        <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z"
+                              fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M8 10H16M8 14H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    <div class="empty-chat-title">Celestial AI Assistant</div>
+                    <div class="empty-chat-subtitle">
+                        I'm your advanced AI assistant powered by neural networks.<br>
+                        Ask me anything about technology, science, or general knowledge.
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form class="chat-input-form" id="chatForm">
+                    <div class="chat-input-wrapper">
+                        <textarea class="chat-input"
+                                  id="messageInput"
+                                  placeholder="Ask Celestial AI anything..."
+                                  rows="1"></textarea>
+                    </div>
+                    <button type="submit" class="send-button" id="sendButton">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
+                                  stroke="currentColor"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
+                <div class="input-hint">
+                    Press Enter to send • Shift+Enter for new line
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/celestial-ai/web.js"></script>
+</body>
+</html>
